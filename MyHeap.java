@@ -50,9 +50,13 @@ public class MyHeap{
   }
 
   public static void heapify(int[] data){
-    if (data.length == 1){
-      return;
+    for (int i = data.length-1; i >= 0; i--){
+      pushDown(data,data.length,i);
     }
+  }
+
+  public static void heapsort(int[]){
+    heapify(data);
     int current = data.length - 1;
     while (current > 0){
       int temp = data[current];
@@ -61,10 +65,6 @@ public class MyHeap{
       pushDown(data,current,0);
       i--;
     }
-  }
-
-  public static void heapsort(int[]){
-
   }
 
   public static void main(String[] args){
