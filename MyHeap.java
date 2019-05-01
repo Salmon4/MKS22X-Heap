@@ -40,7 +40,13 @@ public class MyHeap{
   }
 
   private static void pushUp(int[]data,int index){
-
+    int left = (index-1)/2;
+    if (index == 0){
+      return;
+    }
+    int temp = data[index];
+    data[index] = data[left];
+    data[left] = temp;
   }
 
   public static void heapify(int[]){
