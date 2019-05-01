@@ -1,5 +1,5 @@
 public class MyHeap{
-  private static void pushDown(int[]data,int size,int index){
+  private static void pushDown(int[] data,int size,int index){
     //left
     int left = (index * 2) + 1;
     //right
@@ -39,7 +39,7 @@ public class MyHeap{
 
   }
 
-  private static void pushUp(int[]data,int index){
+  private static void pushUp(int[] data,int index){
     int left = (index-1)/2;
     if (index == 0){
       return;
@@ -49,12 +49,26 @@ public class MyHeap{
     data[left] = temp;
   }
 
-  public static void heapify(int[]){
-
+  public static void heapify(int[] data){
+    if (data.length == 1){
+      return;
+    }
+    int current = data.length - 1;
+    while (current > 0){
+      int temp = data[current];
+      data[current] = data[0];
+      data[0] = temp;
+      pushDown(data,current,0);
+      i--;
+    }
   }
 
   public static void heapsort(int[]){
 
+  }
+
+  public static void main(String[] args){
+    int[] test1 = new int[]{}
   }
 
 }
