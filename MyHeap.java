@@ -50,10 +50,13 @@ public class MyHeap{
     if (index == 0){
       return;
     }
+    if (data[index] > left){
     int temp = data[index];
     data[index] = data[left];
     data[left] = temp;
     pushUp(data,left);
+  }
+  return;
   }
 
   public static void heapify(int[] data){
